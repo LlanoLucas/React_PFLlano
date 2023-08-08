@@ -33,6 +33,15 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           +
         </span>
       </div>
+      <footer className="w-full">
+        <button
+          className="text-center text-xl w-full rounded-b border-t-2 border-black bg-gradient-to-br from-cyan-400 to-blue-500 font-semibold mt-1 py-1 hover:text-white hover:bg-gradient-to-r transition-all ease-in-out duration-300"
+          onClick={() => onAdd(quantity)}
+          disabled={!stock}
+        >
+          Add to Cart
+        </button>
+      </footer>
     </div>
   );
 };

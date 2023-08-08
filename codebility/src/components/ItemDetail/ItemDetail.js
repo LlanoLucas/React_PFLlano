@@ -1,6 +1,6 @@
 import ItemCount from "../ItemCount/ItemCount";
 
-const ItemDetail = ({ id, name, img, price, stock, description }) => {
+const ItemDetail = ({ name, img, price, stock, description }) => {
   return (
     <article className="m-auto mt-12 flex-col w-4/12 rounded-md border-2 border-black">
       <div className="flex-col gap-4 items-center">
@@ -17,17 +17,12 @@ const ItemDetail = ({ id, name, img, price, stock, description }) => {
           <p className="pl-2">Price: ${price}</p>
           <p className="pl-2">Stock: {stock}</p>
         </div>
-        <ItemCount
-          initial={1}
-          stock={stock}
-          onAdd={(quantity) => console.log(`cantidad agregada ${quantity}`)}
-        />
       </div>
-      <footer>
-        <button className="text-center text-xl w-full rounded-b border-t-2 border-black bg-gradient-to-br from-cyan-400 to-blue-500 font-semibold mt-1 py-1 hover:text-white hover:bg-gradient-to-r transition-all ease-in-out duration-300">
-          Add to Cart
-        </button>
-      </footer>
+      <ItemCount
+        initial={1}
+        stock={stock}
+        onAdd={(quantity) => console.log(`cantidad agregada ${quantity}`)}
+      />
     </article>
   );
 };

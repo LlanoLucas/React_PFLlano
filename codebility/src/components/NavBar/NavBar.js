@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
@@ -16,7 +16,7 @@ const NavBar = () => {
         </NavLink>
         <NavLink
           to={"category/books"}
-          className="font-semibold hover:text-cyan-400 cursor-pointer transition-all ease-linear duration-200"
+          className="courses font-semibold hover:text-cyan-400 cursor-pointer transition-all ease-linear duration-200"
         >
           Books
         </NavLink>
