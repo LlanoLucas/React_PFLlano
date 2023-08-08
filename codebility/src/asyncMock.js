@@ -47,3 +47,15 @@ export const getProductById = (productId) => {
     );
   });
 };
+
+export const getProductsByCategory = (categoryId) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        products.filter(
+          (prod) => prod.category.toLowerCase() === categoryId.toLowerCase()
+        )
+      );
+    }, 500);
+  });
+};
