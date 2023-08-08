@@ -20,7 +20,10 @@ const NavBar = () => {
         >
           Books
         </NavLink>
-        <NavLink className="font-semibold hover:text-cyan-400 cursor-pointer transition-all ease-linear duration-200">
+        <NavLink
+          to={"about"}
+          className="font-semibold hover:text-cyan-400 cursor-pointer transition-all ease-linear duration-200"
+        >
           About
         </NavLink>
         <CartWidget />
