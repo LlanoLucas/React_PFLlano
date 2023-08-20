@@ -17,7 +17,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <p className="mt-2">Set Quantity</p>
+      <p>Set Quantity</p>
       <div className="flex font-semibold items-center justify-center py-3 gap-3">
         <span
           className="px-2 cursor-pointer border border-black rounded select-none"
