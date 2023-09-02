@@ -10,19 +10,31 @@ const NavBar = () => {
       <ul className="flex items-center gap-8 ease-linear duration-300">
         <NavLink
           to={"/category/courses"}
-          className="font-semibold hover:text-cyan-400 cursor-pointer transition-all ease-linear duration-200"
+          className={({ isActive }) =>
+            isActive
+              ? "text-cyan-400 font-semibold"
+              : "font-semibold hover:text-cyan-400 cursor-pointer transition-all ease-linear duration-200"
+          }
         >
           Courses
         </NavLink>
         <NavLink
           to={"category/books"}
-          className="courses font-semibold hover:text-cyan-400 cursor-pointer transition-all ease-linear duration-200"
+          className={({ isActive }) =>
+            isActive
+              ? "text-cyan-400 font-semibold"
+              : "font-semibold hover:text-cyan-400 cursor-pointer transition-all ease-linear duration-200"
+          }
         >
           Books
         </NavLink>
         <NavLink
           to={"about"}
-          className="font-semibold hover:text-cyan-400 cursor-pointer transition-all ease-linear duration-200"
+          className={({ isActive }) =>
+            isActive
+              ? "text-cyan-400 font-semibold"
+              : "font-semibold hover:text-cyan-400 cursor-pointer transition-all ease-linear duration-200"
+          }
         >
           About
         </NavLink>

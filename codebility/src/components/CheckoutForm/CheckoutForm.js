@@ -3,7 +3,7 @@ import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import CheckoutDetail from "../CheckoutDetail/CheckoutDetail";
 
-const CheckoutForm = ({ onConfirm, selectedProductos }) => {
+const CheckoutForm = ({ onConfirm }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -22,7 +22,7 @@ const CheckoutForm = ({ onConfirm, selectedProductos }) => {
       };
       onConfirm(userData);
     } else {
-      alert("EMAIL INCORRECTO");
+      alert("WRONG EMAIL");
     }
   };
 
