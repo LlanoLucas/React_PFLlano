@@ -17,8 +17,11 @@ const Item = ({ id, name, img, price, stock }) => {
           <p>Stock: {stock}</p>
         </div>
       </div>
-      <footer className="mb-0 text-center border-t-2 border-black w-full bg-gradient-to-br from-cyan-400 to-blue-500 font-semibold mt-2 rounded-b py-1 hover:text-white hover:bg-gradient-to-r transition-all ease-in-out duration-300">
-        <Link className="block" to={`/item/${id}`}>
+      <footer className="mb-0 text-center border-t-2 text-white border-black w-full bg-gradient-to-r from-cyan-500 to-blue-500 font-semibold mt-2 rounded-b py-1 transition-all ease-in-out duration-300">
+        <Link
+          className="block hover:scale-110 transition-all duration-300"
+          to={`/item/${id}`}
+        >
           See Details
         </Link>
       </footer>

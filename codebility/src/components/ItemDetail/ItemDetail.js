@@ -1,12 +1,23 @@
 import ItemCount from "../ItemCount/ItemCount";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
-const ItemDetail = ({ name, img, price, stock, description }) => {
+const ItemDetail = ({ id, name, img, price, stock, description }) => {
   const [quantityAdded, setQuantityAdded] = useState(0);
+
+  const { addItem } = useContext(CartContext);
 
   const handleOnAdd = (quantity) => {
     setQuantityAdded(quantity);
+
+    const item = {
+      id,
+      name,
+      price,
+    };
+
+    addItem(item, quantity);
   };
 
   return (
@@ -29,9 +40,11 @@ const ItemDetail = ({ name, img, price, stock, description }) => {
       {quantityAdded > 0 ? (
         <Link
           to="/cart"
-          className="text-center block text-xl w-full mt-0 border-t-2 rounded-b border-black bg-gradient-to-br from-cyan-400 to-blue-500 font-semibold py-1 hover:text-white hover:bg-gradient-to-r transition-all ease-in-out duration-300"
+          className="text-white text-center block text-xl w-full mt-0 border-t-2 rounded-b border-black bg-gradient-to-br from-cyan-500 to-blue-500 font-semibold py-1"
         >
-          Proceed to Checkout
+          <p className="hover:scale-105 transition-all duration-300">
+            Proceed to Checkout
+          </p>
         </Link>
       ) : (
         <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
