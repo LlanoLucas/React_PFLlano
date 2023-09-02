@@ -31,9 +31,9 @@ const CheckoutForm = ({ onConfirm }) => {
       <form onSubmit={handleConfirm} className="flex flex-col gap-6 w-4/12">
         <p className="title is-5">
           <label className="flex gap-2 flex-col">
-            <p className="text-sm rounded px-1.5 py-0.5 bg-blue-500 w-max text-white font-semibold">
+            <span className="text-sm rounded px-1.5 py-0.5 bg-blue-500 w-max text-white font-semibold">
               FULL NAME
-            </p>
+            </span>
             <input
               placeholder="Name Lastname"
               type="text"
@@ -46,9 +46,9 @@ const CheckoutForm = ({ onConfirm }) => {
         </p>
         <p className="title is-5">
           <label className="flex gap-2 flex-col">
-            <p className="text-sm rounded px-1.5 py-0.5 bg-blue-500 w-max text-white font-semibold">
+            <span className="text-sm rounded px-1.5 py-0.5 bg-blue-500 w-max text-white font-semibold">
               PHONE
-            </p>
+            </span>
             <input
               placeholder="e.g. 1141852253"
               type="text"
@@ -61,9 +61,9 @@ const CheckoutForm = ({ onConfirm }) => {
         </p>
         <p className="title is-5">
           <label className="flex gap-3 flex-col">
-            <p className="text-sm rounded px-1.5 py-0.5 bg-blue-500 w-max text-white font-semibold">
+            <span className="text-sm rounded px-1.5 py-0.5 bg-blue-500 w-max text-white font-semibold">
               EMAIL
-            </p>
+            </span>
             <input
               placeholder="example@example.com"
               type="email"
@@ -76,9 +76,9 @@ const CheckoutForm = ({ onConfirm }) => {
         </p>
         <p className="title is-5">
           <label className="flex gap-3 flex-col">
-            <p className="text-sm rounded px-1.5 py-0.5 bg-blue-500 w-max text-white font-semibold">
+            <span className="text-sm rounded px-1.5 py-0.5 bg-blue-500 w-max text-white font-semibold">
               CONFIRM EMAIL
-            </p>
+            </span>
             <input
               placeholder="example@example.com"
               type="email"
@@ -105,6 +105,7 @@ const CheckoutForm = ({ onConfirm }) => {
           </Link>
         </div>
       </form>
+      <span className="w-6/12 border-b-2 mt-8 border-gray-400"></span>
       <div className="w-full flex flex-col items-center m-0 text-center">
         <CheckoutDetail cart={cart} />
       </div>

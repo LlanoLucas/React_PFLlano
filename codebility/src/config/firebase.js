@@ -3,7 +3,7 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCzq9oH1LXhjuDje6LLkPK32hblgUq7_z4",
+  apiKey: process.env.REACT_APP_apiKey,
   authDomain: "codebility-e389b.firebaseapp.com",
   projectId: "codebility-e389b",
   storageBucket: "codebility-e389b.appspot.com",

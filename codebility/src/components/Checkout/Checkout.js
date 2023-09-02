@@ -17,7 +17,7 @@ const Checkout = () => {
   const [loading, setLoading] = useState(false);
   const [orderId, setOrderId] = useState("");
 
-  const { cart, totalPrice, clearCart } = useContext(CartContext);
+  const { cart, totalAmount, clearCart } = useContext(CartContext);
 
   const createOrder = async ({ name, phone, email }) => {
     setLoading(true);
@@ -30,7 +30,7 @@ const Checkout = () => {
           email,
         },
         items: cart,
-        total: totalPrice(),
+        total: totalAmount(),
         date: Timestamp.fromDate(new Date()),
       };
       const batch = writeBatch(db);

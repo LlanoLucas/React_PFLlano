@@ -3,7 +3,7 @@ import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
   return (
-    <nav className="flex bg-gradient-to-r from-cyan-700 to-blue-900 text-white px-8 py-4 justify-between items-center">
+    <nav className="flex sticky top-0 bg-gradient-to-r from-cyan-700 to-blue-900 text-white px-8 py-4 justify-between items-center">
       <NavLink to={"/"} className="text-3xl font-semibold cursor-pointer">
         CODEBILITY
       </NavLink>

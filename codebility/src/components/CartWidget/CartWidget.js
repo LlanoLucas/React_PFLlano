@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
-  const { totalQuantity } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
 
   return (
     <Link to="/cart">
       <li className="flex font-semibold cursor-pointer gap-2 bg-gradient-to-br from-blue-500 to-cyan-500 px-2 py-1 rounded items-center hover:gap-3 hover:px-2.5  transition-all ease-linear duration-200">
-        {totalQuantity}
+        {cart.length}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

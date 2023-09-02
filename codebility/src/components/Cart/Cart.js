@@ -28,7 +28,7 @@ const Cart = () => {
         <CartItem key={p.id} {...p} />
       ))}
       <h3 className="font-bold text-3xl w-8/12 self-center text-end px-2">
-        Total: ${parseFloat(totalAmount())}
+        Total: ${parseFloat(totalAmount()).toFixed(2)}
       </h3>
       <div className="flex items-center gap-1 w-8/12 text-xl">
         <button
