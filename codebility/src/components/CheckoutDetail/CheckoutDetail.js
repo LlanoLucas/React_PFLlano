@@ -4,7 +4,7 @@ import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 const CheckoutDetail = () => {
-  const { cart, totalAmount } = useContext(CartContext);
+  const { cart, totalAmount, totalQuantity } = useContext(CartContext);
 
   return (
     <div className="flex flex-col mt-5 mb-8 w-full items-center">
@@ -18,7 +18,10 @@ const CheckoutDetail = () => {
         />
       ))}
       <div className="text-blue-500 font-semibold w-8/12 mt-2 text-end">
-        <Link className="hover:underline" to="/cart">
+        <Link
+          className="hover:text-blue-600 hover:underline transition duration-200"
+          to="/cart"
+        >
           EDIT ORDER
         </Link>
       </div>

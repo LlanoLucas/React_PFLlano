@@ -40,7 +40,7 @@ const CheckoutForm = ({ onConfirm }) => {
               value={name}
               required
               onChange={({ target }) => setName(target.value)}
-              className="px-2 w-full border-b-2 py-0.5 border-blue-500 focus:outline-none  focus:scale-105 transition duration-300"
+              className="px-2 w-full border-b-2 py-0.5 border-blue-500 focus:outline-none  focus:scale-105 focus:border-blue-800 transition duration-300"
             />
           </label>
         </p>
@@ -55,7 +55,7 @@ const CheckoutForm = ({ onConfirm }) => {
               value={phone}
               required
               onChange={({ target }) => setPhone(target.value)}
-              className="px-2 w-full border-b-2 py-0.5 border-blue-500 focus:outline-none  focus:scale-105 transition duration-300"
+              className="px-2 w-full border-b-2 py-0.5 border-blue-500 focus:outline-none  focus:scale-105 focus:border-blue-800 transition duration-300"
             />
           </label>
         </p>
@@ -70,7 +70,7 @@ const CheckoutForm = ({ onConfirm }) => {
               value={email}
               required
               onChange={({ target }) => setEmail(target.value)}
-              className="px-2 w-full border-b-2 py-0.5 border-blue-500 focus:outline-none  focus:scale-105 transition duration-300"
+              className="px-2 w-full border-b-2 py-0.5 border-blue-500 focus:outline-none  focus:scale-105 focus:border-blue-800 transition duration-300"
             />
           </label>
         </p>
@@ -85,14 +85,14 @@ const CheckoutForm = ({ onConfirm }) => {
               value={confirmEmail}
               required
               onChange={({ target }) => setConfirmEmail(target.value)}
-              className="px-2 w-full border-b-2 py-0.5 border-blue-500 focus:outline-none focus:scale-105 transition duration-300"
+              className="px-2 w-full border-b-2 py-0.5 border-blue-500 focus:outline-none focus:scale-105 focus:border-blue-800 transition duration-300"
             />
           </label>
         </p>
         <div className="flex flex-col gap-2">
           <button
             type="submit"
-            className="flex items-center justify-center w-full border-2 border-black bg-blue-500 rounded text-white py-0.5 font-semibold hover:scale-105 transition duration-300"
+            className="flex items-center justify-center w-full border-2 border-black bg-blue-500 rounded text-white py-0.5 font-semibold hover:bg-blue-600 hover:scale-105 transition duration-300"
           >
             PLACE ORDER
           </button>

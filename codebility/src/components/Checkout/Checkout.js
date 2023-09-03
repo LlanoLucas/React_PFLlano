@@ -12,12 +12,14 @@ import {
   documentId,
   addDoc,
 } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const [loading, setLoading] = useState(false);
   const [orderId, setOrderId] = useState("");
 
-  const { cart, totalAmount, clearCart } = useContext(CartContext);
+  const { cart, totalAmount, clearCart, totalQuantity } =
+    useContext(CartContext);
 
   const createOrder = async ({ name, phone, email }) => {
     setLoading(true);
@@ -74,7 +76,7 @@ const Checkout = () => {
     }
   };
 
-  const redirectToInicio = () => {
+  const homeRedirect = () => {
     window.location.href = "/";
   };
 
@@ -82,24 +84,20 @@ const Checkout = () => {
     if (!loading && orderId) {
       Swal.fire({
         title: "ORDER PLACED",
-        text: `THE ID OF YOUR ORDER IS: ${orderId}`,
+        text: `The ID of your order is: ${orderId}`,
         icon: "success",
         confirmButtonText: "GO TO START",
-        customClass: {
-          confirmButton: "button is-success is-rounded",
-        },
+        confirmButtonColor: "#3b82f6",
         onClose: () => {
-          redirectToInicio();
+          homeRedirect();
         },
       });
     } else if (loading) {
       Swal.fire({
-        title: "GENERATING ORDER ID",
-        text: "WAIT WHILE YOUR ID IS GENERATING...",
+        title: "Generating your order ID",
+        text: "Wait while your ID is generating...",
         allowOutsideClick: false,
-        customClass: {
-          confirmButton: "button is-success is-rounded",
-        },
+        confirmButtonColor: "#3b82f6",
         onBeforeOpen: () => {
           Swal.showLoading();
         },
@@ -107,12 +105,28 @@ const Checkout = () => {
     }
   }, [loading, orderId]);
 
-  return (
-    <div className="mt-8">
-      <h1 className="text-4xl font-bold text-center mb-5">CHECKOUT</h1>
-      <CheckoutForm onConfirm={createOrder} />
-    </div>
-  );
+  if (totalQuantity > 0) {
+    return (
+      <div className="mt-8">
+        <h1 className="text-4xl font-bold text-center mb-5">CHECKOUT</h1>
+        <CheckoutForm onConfirm={createOrder} />
+      </div>
+    );
+  } else {
+    return (
+      <div className="flex flex-col items-center mt-8 font-semibold">
+        <h1 className="text-center text-4xl font-bold">
+          You have nothing to buy...
+        </h1>
+        <Link
+          to={"/"}
+          className="mt-2 underline decoration-cyan-400 bg-gradient-to-br from-cyan-400 to-blue-500 bg-clip-text text-transparent text-2xl hover:scale-110 transition-all ease-in-out duration-300 hover:bg-gradient-to-tl"
+        >
+          See Products
+        </Link>
+      </div>
+    );
+  }
 };
 
 export default Checkout;
