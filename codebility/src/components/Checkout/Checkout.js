@@ -76,21 +76,14 @@ const Checkout = () => {
     }
   };
 
-  const homeRedirect = () => {
-    window.location.href = "/";
-  };
-
   useEffect(() => {
     if (!loading && orderId) {
       Swal.fire({
         title: "ORDER PLACED",
         text: `The ID of your order is: ${orderId}`,
         icon: "success",
-        confirmButtonText: "GO TO START",
+        confirmButtonText: "Understood",
         confirmButtonColor: "#3b82f6",
-        onClose: () => {
-          homeRedirect();
-        },
       });
     } else if (loading) {
       Swal.fire({
@@ -98,9 +91,6 @@ const Checkout = () => {
         text: "Wait while your ID is generating...",
         allowOutsideClick: false,
         confirmButtonColor: "#3b82f6",
-        onBeforeOpen: () => {
-          Swal.showLoading();
-        },
       });
     }
   }, [loading, orderId]);
